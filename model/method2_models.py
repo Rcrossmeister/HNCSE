@@ -170,19 +170,14 @@ def cl_forward(cls,
 
     torch.fill_(torch.diagonal(cos_sim_simple), float('-inf'))
         
-    
     k = 10
     s = 40
-
-    # hard negative集合的长度
-    # s = s_num
     alpha = 0.5
     
     def get_G(topK, top_k_similarities):
     
         G_lis = torch.zeros(s, 768).to(cls.device)
         
-        # 生成s对不重复的(i,j)对
         pairs = random.choices([(i, j) for i in range(k) for j in range(i+1, k)], k=s) 
         for cnt, (i, j) in enumerate(pairs):
             G_hat = alpha * topK[i] + (1 - alpha) * topK[j]
@@ -191,7 +186,6 @@ def cl_forward(cls,
         return G_lis
     
     
-    # 获取每行最大的k个值以及对应的下标
     top_k_values, top_k_indices = torch.topk(cos_sim_simple, k, dim=1)
     
     cos_sim = torch.zeros(batch_size, batch_size + s).to(cls.device)
