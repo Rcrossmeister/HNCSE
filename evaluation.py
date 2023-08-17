@@ -70,9 +70,6 @@ def pooling(outputs,attention_mask,args):
         raise NotImplementedError
 
 def compute_kernel_bias(vecs, n_components=256):
-    """计算kernel和bias
-    最后的变换：y = (x + bias).dot(kernel)
-    """
     mu = vecs.mean(axis=0, keepdims=True)
     cov = np.cov(vecs.T)
     u, s, vh = np.linalg.svd(cov)
@@ -179,8 +176,7 @@ def main():
     eval_dataset = Construct_EvaldDtaset(args.eval_path,tokenizer)
     eval_dataloader = DataLoader(eval_dataset,shuffle=False,batch_size=64)
     scores = cal_align_uniform(model,eval_dataloader,args)
-    print("align和uniform得分为：",scores)
-    
+
     # Set up the tasks
     if args.task_set == 'sts':
         args.tasks = ['STS12', 'STS13', 'STS14', 'STS15', 'STS16', 'STSBenchmark', 'SICKRelatedness']
