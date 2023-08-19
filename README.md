@@ -21,6 +21,7 @@ bash run_unsup_example.sh
 ### Evaluation
 
 ```shell
+MODEL_PATH=result/BlendCSE_base_bert
 python3 simcse_to_huggingface.py --path=$MODEL_PATH
 python evaluation.py --model_name_or_path $MODEL_PATH --pooler cls_before_pooler --task_set full --mode test
 ```

@@ -6,10 +6,10 @@ import json
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--path", type=str, help="Path of SimCSE checkpoint folder")
+    parser.add_argument("--path", type=str, help="Path of BlendCSE checkpoint folder")
     args = parser.parse_args()
 
-    print("SimCSE checkpoint -> Huggingface checkpoint for {}".format(args.path))
+    print("BlendCSE checkpoint -> Huggingface checkpoint for {}".format(args.path))
 
     state_dict = torch.load(os.path.join(args.path, "pytorch_model.bin"), map_location=torch.device("cpu"))
     new_state_dict = {}
