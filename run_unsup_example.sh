@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MODEL_PATH=result/BlendCSE_base_bert
+MODEL_PATH=BlendCSE_base_bert
 DEVICE_COUNT=1
 
 CUDA_VISIBLE_DEVICES=$DEVICE_COUNT python train.py \
