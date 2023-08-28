@@ -26,9 +26,6 @@ python3 simcse_to_huggingface.py --path=$MODEL_PATH
 python evaluation.py --model_name_or_path $MODEL_PATH --pooler cls_before_pooler --task_set full --mode test
 ```
 
+### Model
 
-
-
-
-
-
+See our model in huggingface:
