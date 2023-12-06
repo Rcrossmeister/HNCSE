@@ -1,4 +1,4 @@
-# BlendCSE
+# HNCSE
 A PyTorch implementation for our paper "HNCSE: Advancing Sentence Embeddings through Hybrid Contrastive Learning with Hard Negatives".
 
 ## Abstract
