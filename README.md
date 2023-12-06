@@ -1,5 +1,5 @@
 # BlendCSE
-A PyTorch implementation for our paper "BlendCSE: Enhancing Unsupervised Sentence Representation Learning via Strategic Hard Negative Generation".
+A PyTorch implementation for our paper "HNCSE: Advancing Sentence Embeddings through Hybrid Contrastive Learning with Hard Negatives".
 
 ## Abstract
 
